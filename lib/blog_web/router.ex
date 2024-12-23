@@ -17,9 +17,9 @@ defmodule BlogWeb.Router do
   scope "/", BlogWeb do
     pipe_through :browser
 
-    live "/", BlogLive.Articles, :index
-    live "/:article_id", BlogLive.Articles, :article
-
+    live "/", Site, :home
+    live "/blog", BlogLive.Articles, :articles
+    live "/blog/:slug", BlogLive.Article, :article
   end
 
   # Other scopes may use custom stacks.
