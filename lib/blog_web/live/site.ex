@@ -15,8 +15,8 @@ defmodule BlogWeb.Site do
     ~H"""
     <section class="w-full px-4 py-20 sm:px-6 lg:px-8">
       <div class="mx-auto max-w-6xl">
-        <h1 class="text-zinc-100 text-8xl mb-8">Welcome!</h1>
-        <p class="text-zinc-100 text-xl">This website contains work and musings. It's always a work in progress.</p>
+        <h1 class="text-zinc-100">Welcome!</h1>
+        <p class="text-zinc-100">This website contains work and musings. It's always a work in progress.</p>
       </div>
     </section>
     """
