@@ -6,10 +6,16 @@ defmodule Blog.Articles do
   @articles_dir Path.join([:code.priv_dir(:blog), "articles"])
 
   def list_articles() do
-    @articles_dir
-    |> File.ls!()
-    |> Enum.filter(&String.ends_with?(&1, ".md"))
-    |> Enum.map(&Path.basename(&1, ".md"))
+    if File.exists?(@articles_dir) do
+      IO.inspect(@articles_dir, label: "Articles Directory exists.")
+
+      @articles_dir
+      |> File.ls!()
+      |> Enum.filter(&String.ends_with?(&1, ".md"))
+      |> Enum.map(&Path.basename(&1, ".md"))
+    else
+      raise "Articles directory not found at #{@articles_dir}"
+    end
   end
 
   def get_article(name) do
