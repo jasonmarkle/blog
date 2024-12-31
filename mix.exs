@@ -10,7 +10,10 @@ defmodule Blog.MixProject do
       start_permanent: Mix.env() == :prod,
       aliases: aliases(),
       deps: deps(),
-      path: "_build/#{Mix.env}/rel/blog"
+      path: "_build/#{Mix.env}/rel/blog",
+      overlays: [
+        {:copy, "priv/articles", "priv/articles"}
+      ]
     ]
   end
 
